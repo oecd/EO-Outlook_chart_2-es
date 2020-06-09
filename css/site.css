@@ -1130,3 +1130,7 @@ div.tooltip {
   }
 
 }
+
+.connector,.note-line{
+  stroke-width: 2px;
+}
