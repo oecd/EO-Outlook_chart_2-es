@@ -26,7 +26,7 @@
 
     <body>
     <h1>Una caída de la producción seguida de una ligera recuperación</h1>
-    <h2>PIB mundial, índice T4-2019=100</h2>
+    <h2>PIB mundial, índice 4T-2019=100</h2>
     <img id="Play" src="img/triangle-right.svg" alt="Play button">
     <img id="Share" src="img/share.svg" alt="share">
     <div id="scenario" alt=""></div>
@@ -157,13 +157,13 @@
 
                     // return appropriate quarter for that month
                     if (mon <= 2){
-                        return "T1-" + yr;
+                        return "1T-" + yr;
                     } else if (mon <= 5) {
-                        return "T2-" + yr;
+                        return "2T-" + yr;
                     } else if (mon <= 8) {
-                        return "T3-" + yr;
+                        return "3T-" + yr;
                     } else {
-                        return "T4-" + yr;
+                        return "4T-" + yr;
                     }
                 }));
 
@@ -364,23 +364,23 @@
             const annotationSingle = [
                 {
                     note: {
-                        label: "Escenario sin recaída"
+                        label: "Escenario de un solo brote"
                         
                     },
                     x: x(dateParser("2021-Q1")),
                     y: y(annotationMark[0].singleHit),
-                    dy: -50,
+                    dy: -30,
                     dx: -50
                 }
             ]
             const annotationDouble = [
                 {
                     note: {
-                        label: "Escenario de recaída"
+                        label: "Escenario con segundo brote"
                     },
                     x: x(dateParser("2021-Q1")),
                     y: y(annotationMark[0].doubleHit),
-                    dy: 40,
+                    dy: 30,
                     dx: 20
                 }
             ]
@@ -411,7 +411,7 @@
                 .attr("y", function (d) { height })
                 .attr("class", "explanatory")
                 .transition().delay(500).duration(500)
-                .text("En cualquiera de estos casos, durante al menos dos años no se recuperará el nivel del T4-2019")
+                .text("En cualquiera de estos casos, durante al menos dos años no se recuperará el nivel del 4T-2019")
             
             document.getElementById("Play").style.display = "inline-block";
 
