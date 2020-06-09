@@ -25,8 +25,8 @@
     </head>
 
     <body>
-    <h1>Una caída de la producción seguida de una ligera recuperación</h1>
-    <h2>PIB mundial, índice 4T-2019=100</h2>
+    <h1>Un colapso en la actividad económica mundial seguido de una lenta recuperación</h1>
+    <h2>PIB Mundial, índice 4T-2019 = 100</h2>
     <img id="Play" src="img/triangle-right.svg" alt="Play button">
     <img id="Share" src="img/share.svg" alt="share">
     <div id="scenario" alt=""></div>
@@ -59,7 +59,7 @@
     var divMap = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0); 
-    var color = ["#32A674", "#0B68AF", "#E73741", "#E1B400","#993484",  "#DF521E", "#719E24"];
+    var color = ["#32A674", "#993484", "#E73741", "#E1B400","#993484",  "#DF521E", "#719E24"];
 
     var margin = { top: 70, right: 50, bottom: 30, left: 40 };
 
@@ -73,7 +73,7 @@
 
     if (width > 650){
             height = 290;//height = width * mapRatio;
-            lagText = 40;
+            lagText = 10;
 
     }
     else{
@@ -185,7 +185,7 @@
             .append("path")
             .attr("fill", "none"/*"#8DCD79"*/)
             .attr("stroke", function (d) { return color[0] })
-            .attr("stroke-width","4px")
+            .attr("stroke-width", "5px")
            // .attr("opacity", function () { if (k == 0) return 0.1; else return 1; })
             .attr("class", "lineContext")
             //.attr("id", function (d) { return "doubleHit" + i; })
@@ -216,7 +216,7 @@
             .append("path")
             .attr("fill", "none")
             .attr("stroke", function (d) { return color[0] })
-            .attr("stroke-width", "4px")
+            .attr("stroke-width", "5px")
             .attr("opacity",0.5)
             .attr("d", function (d) {
                 return d3.line()//area
@@ -232,7 +232,7 @@
             scenarioSVG
                 .append("path")
                 .attr("fill", "none")
-                .attr("stroke-width", "4px")
+                .attr("stroke-width", "5px")
                 .attr("class","forecast")
                 .transition().delay(7500)
                 .attr("d", function (d) {
@@ -249,7 +249,7 @@
                 .attr("y", function (d) { height })
                 .attr("class", "explanatory")
                 .transition().delay(500).duration(500)
-                .text("y la estimación de crecimiento que realizamos en noviembre de 2019")
+                .text("y cómo, en noviembre 2019, estimamos que crecería")
                 .transition().delay(2500).duration(200).remove()
 
             scenarioSVG.append("text")
@@ -257,7 +257,7 @@
                 .attr("y", function (d) { height })
                 .attr("class", "explanatory")
                 .transition().delay(4000).duration(500)
-                .text("La crisis del COVID-19 nos ha obligado a revisar drásticamente nuestras previsiones")
+                .text("la crisis de COVID-19 nos llevó a revisar drásticamente nuestras previsiones")
                 .transition().delay(3000).duration(200).remove()
         }
 
@@ -266,7 +266,7 @@
                 .append("path")
                 .attr("fill", "none")
                 .attr("stroke", function (d) { return color[1] })
-                .attr("stroke-width", "4px")
+                .attr("stroke-width", "5px")
                 .attr("d", function (d) {
                     return d3.line()//area
                         .x(function (d) { return x(dateParser(d.TIME)); })
@@ -281,7 +281,7 @@
             scenarioSVG
                 .append("path")
                 .attr("fill", "none")
-                .attr("stroke-width", "4px")
+                .attr("stroke-width", "5px")
                 .attr("class", "forecast")
                 .transition().delay(6500)
                 .attr("d", function (d) {
@@ -298,7 +298,7 @@
                 .attr("y", function (d) { height })
                 .attr("class", "explanatory")
                 .transition().delay(500).duration(500)
-                .text("La línea azul muestra las previsiones que contemplan un solo episodio de COVID-19")
+                .text("la línea azul muestra nuestros pronósticos con un solo brote de COVID-19")
                 .transition().delay(5500).duration(200).remove()
 
         } 
@@ -310,7 +310,7 @@
                 .append("path")
                 .attr("fill", "none")
                 .attr("stroke", function (d) { return color[2] })
-                .attr("stroke-width", "4px")
+                .attr("stroke-width", "5px")
                 .attr("d", function (d) {
                     return d3.line()//area
                         .x(function (d) { return x(dateParser(d.TIME)); })
@@ -325,7 +325,7 @@
             scenarioSVG
                 .append("path")
                 .attr("fill", "none")
-                .attr("stroke-width", "4px")
+                .attr("stroke-width", "5px")
                 .attr("class", "forecast")
                 .transition().delay(7500)
                 .attr("d", function (d) {
@@ -342,7 +342,7 @@
                 .attr("y", function (d) { height })
                 .attr("class", "explanatory")
                 .transition().delay(500).duration(500)
-                .text("La línea roja indica las previsiones en caso de producirse una segunda oleada de contagios en otoño")
+                .text("la línea roja muestra el PIB si un segundo brote de contagios golpease antes de fin de año")
                 .transition().delay(6500).duration(200).remove()
 
             }
@@ -411,7 +411,7 @@
                 .attr("y", function (d) { height })
                 .attr("class", "explanatory")
                 .transition().delay(500).duration(500)
-                .text("En cualquiera de estos casos, durante al menos dos años no se recuperará el nivel del 4T-2019")
+                .text("En ambos escenarios, no volveremos al nivel de 4T-2019 por lo menos hasta dentro de 2 años")
             
             document.getElementById("Play").style.display = "inline-block";
 
